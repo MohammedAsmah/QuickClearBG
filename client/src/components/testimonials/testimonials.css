@@ -1,0 +1,145 @@
+.testimonials {
+    margin: 80px 2%;
+    width: 100%; 
+    position: relative;
+    
+}
+.next{
+    border-radius: 50px;
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    border: none;
+    border-radius: 100%;
+    transform: translateY(-50%);
+    background-color: #f4f5f6;
+
+}
+.next img{
+    width: 40px;
+    transform: rotate(180deg);
+    border-radius: 50%;
+    transition: 0.6;
+
+}
+.back{
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border: none;
+    border-radius: 100%;
+    background-color: #f4f5f6;
+    transform: translateY(-50%);
+
+}
+.back img:hover,.next:hover {
+    box-shadow: 0 0px 5px rgba(122, 122, 122, 0.535);
+    cursor: pointer;
+  }
+.back img{
+    width: 40px;
+    border-radius: 50%;
+    transition: 0.6;
+}
+.allsl {
+    padding: 15px;
+    overflow: hidden; 
+}
+.test_slider {
+    width: 200%; /* Correct for showing multiple testimonials */
+    display: flex;
+    padding: 0 5%;
+    justify-content: space-between;
+    transition: 0.5s;
+}
+
+.testimonial {
+    flex-basis: 22%; /* Each testimonial takes 20% of the slider width */
+    min-width: 22%; /* Ensure testimonials don't shrink below 20% */
+    padding: 2%;
+    margin: 0 3px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+    line-height: 1.6;
+    border-radius: 20px;
+    background: rgb(252, 251, 251);
+}
+.testimonial p{
+    color: rgb(167, 165, 165);
+
+}
+.info h4{
+    color:#4A4AD9;
+    font-weight: 900;
+}
+.info img{
+    width: 25%;
+    border-radius: 50%;
+    border: solid 4px #4A4AD9;
+    margin-right: 15px;
+}
+.info{
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.name{
+    display: flex;
+    flex-direction: column;
+    
+}
+.info p{
+    color:#00D4FF;
+}
+
+/* ////////////////////// media query */
+ 
+@media (max-width: 850px) {
+    .testimonials {
+        margin: 60px 0%; /* Increased height for better mobile view */
+    }
+    
+    .test_slider {
+        width: 400%; /* Increased width to accommodate single items */
+        padding: 0 2%;
+    }
+    
+    .testimonial {
+        flex-basis: 90%; /* Take almost full width */
+        margin: 0 10px;
+        padding: 20px;
+        min-width:  15%;
+    }
+    
+    .allsl {
+        padding: 10px;
+        margin: auto 8%;
+    }
+    
+
+    .info h4{
+        color:#4A4AD9;
+        font-weight:700;
+    }
+    .next img, .back img {
+        width: 30px;
+    }
+}@media (max-width:500px){
+.testimonial{
+    padding: 10px;
+    line-height: 1.4;
+}
+.next, .back {
+    width: 35px; /* Slightly smaller navigation buttons */
+    height: 35px;
+    
+}
+.allsl{
+    margin: auto 13%;
+}
+.next img, .back img {
+    width: 30px;
+}
+}

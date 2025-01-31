@@ -1,0 +1,218 @@
+.results_container{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2%;
+}
+.results{
+    padding: 2%;
+    border-radius: 10px;
+    background-color: rgb(249, 249, 249);
+    box-shadow: 0 0 5px rgba(172, 171, 171, 0.459);
+    
+}
+.images_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.with_background img,.without_background img{
+    border-radius: 10px;
+    width: 100%;
+}
+.bckground_layer{
+    width: 100%;
+    height: 123%;
+    border-radius: 10px;background-image: url('bg_layer.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.preloader {
+    width: 50px; /* You can adjust this value */
+    height: 50px; /* You can adjust this value */
+    object-fit: contain;
+  }
+  .preloader_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.with_background, .without_background{
+    width: 47%;
+    aspect-ratio: 2/1;
+    
+}
+
+.with_background h5, .without_background h5{
+    margin-bottom: 10px;
+    color: rgb(170, 171, 171);
+    font-size: medium;
+    letter-spacing: 1px;
+}
+.res_controlers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.res_controlers div{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin: 1% 3%;
+    align-items: center;
+}
+.try_other button{
+    padding: 8px 17px;
+    text-align: center;
+    color: #4A4AD9;
+    font-size: 10px;
+    font-weight: 600;  
+    border-radius: 25px;
+    background:white   ;
+    cursor: pointer;
+    border: solid 1px #4A4AD9;
+    outline: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease; 
+    box-shadow: 0 2px 10px rgba(250, 229, 229, 0.1);
+    position: relative;
+    overflow: hidden; 
+    gap: 8px; 
+}
+.download a{
+    padding: 10px 19px;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 600;  
+  border-radius: 25px;
+  background-image: linear-gradient(to right,#4A4AD9,#00D4FF)   ;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease; 
+  box-shadow: 0 2px 10px rgba(250, 229, 229, 0.1);
+  position: relative;
+  overflow: hidden; 
+  gap: 8px;  
+}
+.download a:active,.try_other button:active {
+    transform: translateY(1px);  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .download a:active,.try_other button:active {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  
+  .download a:active,.try_other button:active {
+    outline: 2px solid rgba(89, 89, 251, 0.5);
+    outline-offset: 2px;
+  }
+  .download a:hover {
+    transform: translateY(-2px);  
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    background-image: linear-gradient(to right,#4040d5,#03c5ec)   ;
+  }
+  .try_other button:hover{
+    transform: translateY(-2px);  
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: solid 1px #03c5ec;
+    color: #03c5ec;
+  }
+  @media (max-width:900px){
+    .download a{
+        padding: 11px 9px;
+    }
+    .results_container{
+        height: 90vh;
+    }
+    .try_other button{
+        padding: 9px 7px;
+    }
+  }
+  @media (max-width:670px){
+    .results_container{
+        height: auto;
+        margin: 80px 2%;
+        
+    }
+    
+    .bckground_layer{
+        width: 100%;
+        height: 86%;
+        
+    }
+    .images_container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+       
+    }
+    
+    .with_background, .without_background{
+        width: 80%;
+        aspect-ratio: 3/2;
+    }
+    .res_controlers{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        margin: 0px 8%;
+        margin-top:10px;
+    }
+    .res_controlers div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }    
+  }
+  @media (max-width:370px){
+    .res_controlers{
+        margin-top: 20px;
+        
+    }
+    .cont{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        margin: 20px 20px;
+    }
+    
+  }
+  @media (max-width:320px){
+    .res_controlers{
+        margin-top: 50px;
+    }
+    .download a{
+        padding: 8px 6px;
+    }
+    .try_other button{
+        padding: 6px 4px;
+    }
+    
+    
+  }
+  

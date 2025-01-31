@@ -1,0 +1,43 @@
+.steps{
+    display: flex;
+    justify-content: space-between;
+    margin: 110px 2%;
+}
+.step{
+    background: #fcfbfb;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 14px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(128, 128, 128, 0.441);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.step:hover {
+    transform: translateY(-5px); /* Lifts the card slightly */
+    box-shadow: 0 4px 15px rgba(128, 128, 128, 0.6); /* Adds a stronger shadow */
+    cursor: pointer; /* Changes the cursor to indicate interactivity */
+}
+
+.step_inf img{
+    width: 50px;
+}
+.step_inf h4{
+    color:rgba(35, 35, 35, 0.852);
+    line-height: 1.5;
+    font-size: medium;
+    font-weight: 700;
+}
+.step_inf{
+    margin-bottom: 30PX;
+}
+.step_desc p{
+    color:#acacac ;
+    line-height: 1.6;
+    font-size: medium;
+    
+}
+@media (max-width: 620px) {
+    .steps{
+        flex-wrap: wrap;
+    }
+}

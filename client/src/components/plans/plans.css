@@ -1,0 +1,167 @@
+.all_plans{
+    height: 87vh;
+    color: rgb(58, 58, 58);
+    padding: 10% 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+}
+
+.plans_container{
+    margin: 5% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.plans_title{
+    display: flex;
+    justify-content: center;
+    margin: 3% 0;
+}
+.plans_title h3{
+    letter-spacing:1px;
+    text-align: center;
+    max-width: 400px;
+    font-size: x-large;
+    font-weight: 800;
+    background: linear-gradient(to right, rgb(62, 62, 62), rgba(68, 67, 67, 0.3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.plan{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 20px;
+    padding: 30px 15px;
+    background-color: rgb(248, 248, 248);
+    box-shadow: 0 0 7px rgba(178, 178, 178, 0.415);
+    transition: 0.6s;
+}
+.plan:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(178, 178, 178, 0.62);
+    background-color: white;
+}
+.plan img{
+    width: 20%;
+}
+.plan span{
+    font-size: small;
+    font-weight: 600;
+    margin-left: 5px;
+    color:  rgb(100, 100, 100);
+}
+.plan p{
+font-size: small;
+}
+.plan h4{
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+.our_plans{
+    text-align: center;
+}
+.our_plans button{
+    letter-spacing: 1px;
+    font-size: larger;
+    font-weight: 700;
+    padding: 8px 30px;
+    text-align: center;
+    color: rgb(100, 100, 100);
+    font-size: 10px;
+    font-weight: 600;  
+    border-radius: 25px;
+    background:white   ;
+    cursor: pointer;
+    border: solid 1px rgb(100, 100, 100);
+    outline: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease; 
+    box-shadow: 0 2px 8px rgba(143, 143, 143, 0.249);
+    position: relative;
+    overflow: hidden; 
+    gap: 8px; 
+}
+.our_plans button:active {
+    transform: translateY(1px);  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .our_plans button:active {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  
+  .our_plans button:active {
+    outline: 2px solid rgba(89, 89, 251, 0.5);
+    outline-offset: 2px;
+  }
+  .our_plans button:hover{
+    transform: translateY(-2px);  
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: solid 1px rgb(81, 81, 81);
+    color: rgb(81, 81, 81);
+  }
+  @media (max-width: 700px) {
+    .all_plans{
+        height: auto;
+        
+    }
+    .plans_container{
+    margin: 3% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.plan{
+    width: 70%;
+    margin: 5% 0;
+}
+.plan img{
+    width: 15%;
+}
+}
+@media (max-width: 400px) {
+    .our_plans button{
+        letter-spacing: 0px;
+        font-size: larger;
+        font-weight: 700;
+        padding: 8px 20px;
+        font-size: 10px;
+        font-weight: 600;  
+        
+    }.plans_title h3{
+        letter-spacing:1;
+        text-align: center;
+        font-size: x-large;
+        font-weight: 800;
+        background: linear-gradient(to right, rgb(62, 62, 62), rgba(68, 67, 67, 0.3));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .plan{
+        width: 80%;
+        margin: 5% 0;
+    }
+    .plan img{
+        width: 20%;
+    }
+    .plans_title h3{
+        text-align: center;
+        max-width: 400px;
+        font-size: medium;
+        font-weight: 800;
+        background: linear-gradient(to right, rgb(62, 62, 62), rgba(68, 67, 67, 0.3));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

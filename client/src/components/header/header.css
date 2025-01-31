@@ -1,0 +1,92 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+    
+    margin: 0 2%;
+    
+}
+.right {
+    flex-basis: 50%;
+}
+.left{
+    flex-basis: 40%;
+}
+.left img{
+    width: 100%;
+     border-radius: 10px;
+}
+.right{
+    max-width: 400px;
+    margin-right: 0;
+}
+.paragraph{
+    margin: 15px 0;
+    line-height: 1.7;
+    color:#acacac ;
+}
+.header_title{
+    line-height: 1.6;
+    font-size: x-large;
+    color: rgb(68, 67, 67);
+}
+.header_title span{
+    background: linear-gradient(to right, #4A4AD9, #00D4FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;}
+    label p{
+        font-size: 14px;
+        font-weight: 500;
+    }
+    label img{
+        height: 26px;
+        margin-right: 10px;
+
+    }
+    label{
+        margin-top: 10px;
+    }
+/* media qeury */
+@media (max-width: 700px) {
+    .header {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse; /* Reverse the entire flex direction */
+        margin: 0 0;
+    }
+    .left {
+        order: 1; /* Ensure the left section appears second */
+        margin: 40px auto;
+        text-align: center;
+        margin-top: 90px;
+    }
+    .right {
+        order: 0; /* Ensure the right section appears first */
+    }
+    .left img{
+        width: 60%;
+    }
+    .right{
+        max-width: none;
+        width: 80%;
+        margin-right: 0;
+    }
+}
+
+@media (max-width:550px){
+    .paragraph{
+        margin: 15px 0;
+        line-height: 1.5;
+    }
+    .header_title{
+        line-height: 1.2;
+        font-size: medium;
+    }
+    label img{
+        height: 20px;
+        margin-right: 0px;
+
+    }
+}

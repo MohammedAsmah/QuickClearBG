@@ -1,0 +1,13 @@
+.last_sec{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 70px 2%;
+    margin-bottom: 120px;
+}
+@media (max-width:860px){
+    .last_sec{
+        margin: 70px 2%;
+        margin-bottom: 130px;
+    }
+}
