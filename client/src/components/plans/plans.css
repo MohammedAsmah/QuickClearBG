@@ -1,15 +1,14 @@
 .all_plans{
     height: 87vh;
     color: rgb(58, 58, 58);
-    padding: 10% 2%;
+    padding: 20% 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 0;
 }
-
 .plans_container{
-    margin: 5% 0;
+    margin: 3% 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,7 +16,7 @@
 .plans_title{
     display: flex;
     justify-content: center;
-    margin: 3% 0;
+    margin: 2% 0;
 }
 .plans_title h3{
     letter-spacing:1px;
