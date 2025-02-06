@@ -4,6 +4,7 @@ import cors from 'cors'
 import connectDB from './configs/mongodb.js'
 import userRouter from './routes/userRoutes.js'
 
+
 //app config
 const PORT = process.env.PORT || 4000
 const app=express()
