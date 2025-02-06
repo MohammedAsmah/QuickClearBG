@@ -1,3 +1,5 @@
+import { Webhook } from "svix"
+import userModel from "../models/userModel.js"
 const clerkWebhooks = async (req, res) => {
     try {
         const Whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET);
@@ -43,4 +45,5 @@ const clerkWebhooks = async (req, res) => {
         console.error('Webhook error:', error);
         return res.status(500).json({ success: false, message: error.message });
     }
-};
+}
+export {clerkWebhooks}
