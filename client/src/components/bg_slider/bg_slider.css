@@ -1,11 +1,11 @@
 .bg_slider{
    display: flex;
    justify-content: center;
-   margin: 110px 2%;
+   margin: 100px 2%;
 }
 .bg_container{
     position: relative;
-    width: 80%;
+    width: 70%;
     margin: 0 10%;
     border-radius: 10px;
 }
@@ -45,4 +45,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     transform: translateY(-50%);
+}
+@media (max-width: 800px) {
+    .bg_slider{
+        margin: 70px 2%;
+     }
 }
