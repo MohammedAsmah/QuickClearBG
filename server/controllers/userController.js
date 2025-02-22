@@ -1,5 +1,5 @@
-import { Webhook } from "svix"
-import userModel from "../models/userModel.js"
+import { Webhook } from "svix";
+import userModel from "../models/userModel.js";
 
 const clerkWebhooks = async (req, res) => {
   try {
@@ -20,10 +20,7 @@ const clerkWebhooks = async (req, res) => {
 
     switch (type) {
       case "user.created": {
-        // Log extracted data
-        console.log("👤 Data from Clerk:", data);
-        
-        // Build userData with fallbacks
+        console.log("👤 Handling user creation");
         const userData = {
           clerkId: data.id,
           email: data.email_addresses?.[0]?.email_address || "no-email@example.com",
@@ -31,22 +28,62 @@ const clerkWebhooks = async (req, res) => {
           lastName: data.last_name || "",
           photo: data.image_url || "default.jpg",
         };
-
-        console.log("📝 User data to save:", userData);
         
-        // Save to DB
         const newUser = await userModel.create(userData);
-        console.log("✅ User saved:", newUser);
-        
-        res.status(200).json({ success: true });
-        break;
+        console.log("✅ User created:", newUser._id);
+        return res.status(200).json({ success: true });
       }
+
+      case "user.updated": {
+        console.log("🔄 Handling user update for:", data.id);
+        const updateData = {
+          email: data.email_addresses?.[0]?.email_address,
+          firstName: data.first_name || "",
+          lastName: data.last_name || "",
+          photo: data.image_url || "default.jpg",
+        };
+
+        const updatedUser = await userModel.findOneAndUpdate(
+          { clerkId: data.id },
+          updateData,
+          { new: true, runValidators: true }
+        );
+
+        if (!updatedUser) {
+          console.log("⚠️ User not found for update:", data.id);
+          return res.status(404).json({ success: false, message: "User not found" });
+        }
+
+        console.log("✅ User updated:", updatedUser._id);
+        return res.status(200).json({ success: true });
+      }
+
+      case "user.deleted": {
+        console.log("🗑️ Handling user deletion for:", data.id);
+        const deletedUser = await userModel.findOneAndDelete({ clerkId: data.id });
+
+        if (!deletedUser) {
+          console.log("⚠️ User not found for deletion:", data.id);
+          return res.status(404).json({ success: false, message: "User not found" });
+        }
+
+        console.log("✅ User deleted:", deletedUser._id);
+        return res.status(200).json({ success: true });
+      }
+
       default:
-        res.status(200).json({ success: true });
+        console.log("🔔 Unhandled event type:", type);
+        return res.status(200).json({ success: true });
     }
   } catch (error) {
-    console.error("❌ Error:", error.message); // <-- Critical: Log the actual error
-    res.status(500).json({ success: false, message: error.message });
+    console.error("❌ Error:", error.message);
+    console.error("Stack trace:", error.stack);
+    return res.status(500).json({ 
+      success: false,
+      message: error.message,
+      ...(process.env.NODE_ENV === 'development' && { stack: error.stack })
+    });
   }
 };
-export {clerkWebhooks}
+
+export { clerkWebhooks };
